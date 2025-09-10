@@ -13,14 +13,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-    <link rel="stylesheet" href="./src/css/responsivo.css">
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&family=Raleway:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/css/estilos.css">
+  <link rel="stylesheet" href="./src/css/responsivo.css">
 </head>
 
 <body id="body">
+
+  <button class="btn-menu-hamburguer">
+    <i class="fas fa-bars"></i>
+  </button>
 
   <header class="cabecalho">
     <a href="#home">
@@ -30,233 +33,168 @@
     <nav class="menu">
       <ul>
         <li>
-          <a href="#projetos">Meus projetos</a>
-
+          <a href="#home">Início</a>
         </li>
-        <li><a href="#contato">Contato</a></li>
+        <li>
+          <a href="#habilidades">Habilidades</a>
+        </li>
+        <li>
+          <a href="#projetos">Meus projetos</a>
+        </li>
       </ul>
-      
-        
-    
     </nav>
   </header>
-  <section class="home" id="home">
-    <div class="informacoes">
-      <h1>Olá! Sou Raphael Feliciano</h1>
-      <p>Um desenvolvedor frontend em formação apaixonado por tecnologia.</p>
-      <p>
-        Estou sempre me desafiando com novos projetos e buscando feedback na
-        comunidade de programação, além de compartilhar meus conhecimentos. 😁
-      </p>
-      <p>Ah, também sou fã de jogos, filmes, séries e animes. 💜</p>
-
-      <ul class="redes-sociais">
-        <li>
-          <a href="https://www.linkedin.com/in/raphael-gustavo-898368165" title="Ir para o LinkedIn" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://wa.me/5519989072931" title="Enviar Mensagem no WhatsApp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://github.com/RaaphaGuu" title="Ir para o GitHub" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/raphaaelfeliciano/" title="Ir para o Instagram" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="container-foto">
-      <div class="foto sombra-interna">
-        <img src="./src/imagens/logoRF.png" alt="foto do portfólio do Raphael" />
+  <main class="conteudo-principal">
+    <section class="home" id="home">
+      <div class="informacoes">
+        <h1>Olá! Sou Raphael Feliciano</h1>
+        <p>Um desenvolvedor frontend em formação apaixonado por tecnologia.</p>
+        <p>Siga minha jornada de aprendizado e projetos abaixo.</p>
+        <ul class="redes-sociais">
+          <li>
+            <a href="https://www.linkedin.com/in/raphael-gustavo-898368165" title="Ir para o LinkedIn" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/5519989072931" title="Enviar Mensagem no WhatsApp" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/RaaphaGuu" title="Ir para o GitHub" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/raphaaelfeliciano/" title="Ir para o Instagram" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-
-
-  </section>
-  <section class="habilidades" id="habilidades">
-    <h2 class="titulo">Minhas Habilidades</h2>
-    <div class="container-habilidades">
-      <div class="habilidade">
-        <div class="logo">
-          <i class="devicon devicon-javascript-plain">
-          </i>
+      <div class="container-foto">
+        <div class="foto sombra-interna">
+          <img src="./src/imagens/logoRF.png" alt="foto do portfólio do Raphael" />
         </div>
-        <h3>JavaScript</h3>
-        <p>Linguagem de programação para criar interatividade em páginas web.</p>
       </div>
+    </section>
 
-      <div class="habilidade">
-        <div class="logo">
-          <i class="devicon devicon-html5-plain-wordmark">
-          </i>
-        </div>
-        <h3>HTML5</h3>
-        <p>Linguagem de marcação para estruturar o conteúdo de páginas web.</p>
-      </div>
-
-      <div class="habilidade">
-        <div class="logo">
-          <i class="devicon devicon-css3-plain-wordmark">
-          </i>
-        </div>
-        <h3>CSS3</h3>
-        <p>Linguagem de estilização para criar o design de páginas web.</p>
-      </div>
-
-      <div class="habilidade">
-        <div class="logo">
-          <i class="devicon devicon-github-original">
-          </i>
-        </div>
-        <h3>GitHub</h3>
-        <p>Plataforma para hospedar código-fonte com controle de versão Git.</p>
-      </div>
-
-      <div class="habilidade">
-        <div class="logo">
-          <i class="devicon devicon-git-plain">
-          </i>
-        </div>
-        <h3>Git</h3>
-        <p>Sistema de controle de versões para rastrear alterações no código.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="projetos" id="projetos">
-    <h2 class="titulo">Meus projetos</h2>
-
-    <div class="projetos-galeria-navegacao">
-      <ul class="lista-projetos">
-        <li class="item-projeto ativo" data-index="0">
-          <img src="./src/imagens/projeto-gta.png" alt="Thumbnail projeto GTA" />
-        </li>
-
-        <li class="item-projeto" data-index="1">
-          <img src="./src/imagens/projeto-one-piece.png" alt="Thumbnail projeto One Piece" />
-        </li>
-
-        <li class="item-projeto" data-index="2">
-          <img src="./src/imagens/projeto-x-men.png" alt="Thumbnail projeto seletor de personagens x-men" />
-        </li>
-
-        <li class="item-projeto" data-index="3">
-          <img src="./src/imagens/registro-osla.png" alt="Thumbnail capa do projeto" />
-        </li>
-
-          <li class="item-projeto" data-index="4">
-          <img src="./src/imagens/garagem-da-mina.png" alt="Thumbnail capa do projeto" />
-        </li>
-      </ul>
-    </div>
-
-    <div class="container-projetos">
-      <div class="projeto ativo" data-color-primary="#1d2e68" data-color-secondary="#3b1a43">
-        <a href="https://raaphaguu.github.io/Projeto-gta-v/" target="_blank">
-          <img src="./src/imagens/projeto-gta.png" alt="Projeto Landing page GTA" />
-          <h3>Projeto 1</h3>
-          <div class="informacoes-projeto">
-            <h2>Landing Page GTA</h2>
-            <p>Projeto feito usando HTML, CSS e JavaScript</p>
-            <p>🔗 Ver no GitHub Pages</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="projeto" data-color-primary="#f7c301" data-color-secondary="#0a4a8f">
-        <a href="https://raaphaguu.github.io/One-piece-devemdobo/" target="_blank">
-          <img src="./src/imagens/projeto-one-piece.png" alt="Projeto Landing One-piece" />
-          <h3>Projeto 2</h3>
-          <div class="informacoes-projeto">
-            <h2>Seletor One Piece</h2>
-            <p>Projeto feito usando HTML, CSS e JavaScript</p>
-            <p>🔗 Ver no GitHub Pages</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="projeto" data-color-primary="#000000" data-color-secondary="#f8c801">
-        <a href="https://raaphaguu.github.io/x-mandevemdobro/" target="_blank">
-          <img src="./src/imagens/projeto-x-men.png" alt="Projeto seletor de personagens x-men" />
-          <h3>Projeto 3</h3>
-          <div class="informacoes-projeto">
-            <h2>Seletor X-Men</h2>
-            <p>Projeto feito usando HTML, CSS e JavaScript</p>
-            <p>🔗 Ver no GitHub Pages</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="projeto" data-color-primary="#333333" data-color-secondary="#555555">
-        <a href="https://raphaelfeliciano-web.github.io/registro-osla/" target="_blank">
-          <img src="./src/imagens/registro-osla.png" alt="Capa do projeto" />
-          <h3>Projeto 4</h3>
-          <div class="informacoes-projeto">
-            <h2>Em breve</h2>
-            <p>Projeto feito usando HTML, CSS e JavaScript</p>
-            <p>🔗 Ver no GitHub Pages</p>
-          </div>
-        </a>
-      </div>
-
-
-    <div class="projeto" data-color-primary="#333333" data-color-secondary="#555555">
-        <a href="https://raphaelfeliciano-web.github.io/garagem-da-mina/" target="_blank">
-          <img src="./src/imagens/garagem-da-mina.png" alt="Capa do projeto" />
-          <h3>Projeto 4</h3>
-          <div class="informacoes-projeto">
-            <h2>Em breve</h2>
-            <p>Projeto feito usando HTML, CSS e JavaScript</p>
-            <p>🔗 Ver no GitHub Pages</p>
-          </div>
-        </a>
+    <section class="timeline">
+      <h2 class="titulo-secao"><span>Minha Jornada</span></h2>
+      <!-- HABILIDADES -->
+      <div id="habilidades" class="timeline-item left">
+        <div class="timeline-content card-habilidade">
+          <i class="devicon-html5-plain-wordmark"></i>
+          <h3>HTML5</h3>
+          <p>Linguagem de marcação para estruturar o conteúdo de páginas web.</p>
         </div>
       </div>
 
-    </div>
-    <!-- <div class="projeto" data-color-primary="#333333" data-color-secondary="#555555">
-        <a href="https://raphaelfeliciano-web.github.io/garagem-da-mina/" target="_blank">
-          <img src="./src/imagens/garagem-da-mina.png" alt="Capa do projeto" />
-          <h3>Projeto 4</h3>
-          <div class="informacoes-projeto">
-            <h2>Em breve</h2>
-            <p>Projeto feito usando HTML, CSS e JavaScript</p>
-            <p>🔗 Ver no GitHub Pages</p>
-          </div>
-        </a>
+      <div class="timeline-item right">
+        <div class="timeline-content card-habilidade">
+          <i class="devicon-css3-plain-wordmark"></i>
+          <h3>CSS3</h3>
+          <p>Linguagem de estilização para criar o design de páginas web.</p>
+        </div>
       </div>
-    </div> -->
 
-    <button class="btn-seta btn-voltar">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="btn-seta btn-avancar">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-<!--     
-    <div class="ativo"  id="contato">
-      
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-      <label for="endereco">E-mail:</label>
-      <input type="text" id="endereco" name="endereco" required>
+      <div class="timeline-item left">
+        <div class="timeline-content card-habilidade">
+          <i class="devicon-javascript-plain"></i>
+          <h3>JavaScript</h3>
+          <p>Linguagem de programação para criar interatividade em páginas web.</p>
+        </div>
+      </div>
 
-      <button class="btn-contato">Registrar</button>
-  </div> -->
-  </section>
-  
+      <h2 class="titulo-secao"><span>Meus Projetos</span></h2>
+
+      <!-- PROJETOS -->
+      <div id="projetos" class="timeline-item right card-projeto expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="./src/imagens/controle-financeiro-pessoal.png" alt="Projeto Controle Financeiro Pessoal" />
+            <h3>Controle Financeiro Pessoal</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Aplicativo web para gerenciamento de finanças, construído com HTML, CSS e JavaScript puro, focado em usabilidade e interface limpa.</p>
+            <a href="https://raphaelfeliciano-web.github.io/Financeiro/" class="btn-ver-projeto" target="_blank">🔗 Ver Projeto</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left card-projeto expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="./src/imagens/projeto-gta.png" alt="Projeto Landing page GTA" />
+            <h3>Landing Page GTA</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Landing page temática com trailer em vídeo, galeria de imagens e informações, demonstrando manipulação do DOM e design responsivo.</p>
+            <a href="https://raaphaguu.github.io/Projeto-gta-v/" class="btn-ver-projeto" target="_blank">🔗 Ver Projeto</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right card-projeto expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="./src/imagens/projeto-one-piece.png" alt="Projeto Landing One-piece" />
+            <h3>Seletor One Piece</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Um seletor de personagens interativo, onde a seleção de um personagem altera dinamicamente o conteúdo e a aparência da página.</p>
+            <a href="https://raaphaguu.github.io/One-piece-devemdobo/" class="btn-ver-projeto" target="_blank">🔗 Ver Projeto</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left card-projeto expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="./src/imagens/projeto-x-men.png" alt="Projeto seletor de personagens x-men" />
+            <h3>Seletor X-Men</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Outro seletor de personagens interativo, demonstrando a reutilização de lógicas de manipulação do DOM para diferentes temas.</p>
+            <a href="https://raaphaguu.github.io/x-mandevemdobro/" class="btn-ver-projeto" target="_blank">🔗 Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right card-projeto expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="./src/imagens/registro-osla.png" alt="Capa do projeto OSLA" />
+            <h3>Registro OSLA</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Um formulário de registro com validações e feedback para o usuário, focado na experiência de preenchimento de dados.</p>
+            <a href="https://raphaelfeliciano-web.github.io/registro-osla/" class="btn-ver-projeto" target="_blank">🔗 Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left card-projeto expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <img src="./src/imagens/garagem-da-mina.png" alt="Capa do projeto Garagem da Mina" />
+            <h3>Garagem da Mina</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Página de apresentação para um serviço, com layout limpo e informações de contato, otimizada para conversão.</p>
+            <a href="https://raphaelfeliciano-web.github.io/garagem-da-mina/" class="btn-ver-projeto" target="_blank">🔗 Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="./src/js/index.js"></script>
 </body>

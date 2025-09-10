@@ -1,100 +1,58 @@
-const btnAvancar = document.querySelector('.btn-avancar');
-const btnVoltar = document.querySelector('.btn-voltar');
-const projetos = document.querySelectorAll('.projeto');
-const menuLateralItens = document.querySelectorAll('.projetos-galeria-navegacao .item-projeto');
-const body = document.getElementById('body');
+/* LÓGICA DO MENU HAMBÚRGUER */
+const btnMenu = document.querySelector('.btn-menu-hamburguer');
+const menu = document.querySelector('.cabecalho');
+const body = document.querySelector('body');
 
-let projetoAtual = 0;
+btnMenu.addEventListener('click', () => {
+    menu.classList.toggle('menu-aberto');
+    body.classList.toggle('menu-aberto');
+});
 
-function esconderProjetoSelecionado() {
-  const projetoSelecionado = document.querySelector('.projeto.ativo');
-  projetoSelecionado.classList.remove('ativo');
-}
-
-function mostrarProjeto() {
-  projetos[projetoAtual].classList.add('ativo');
-  mudarCorDeFundo(projetos[projetoAtual]);
-}
-
-function mudarCorDeFundo(projeto) {
-    const corPrimaria = projeto.getAttribute('data-color-primary');
-    const corSecundaria = projeto.getAttribute('data-color-secondary');
-    if (corPrimaria && corSecundaria) {
-        body.style.background = `linear-gradient(150deg, ${corPrimaria}, ${corSecundaria})`;
+// Fecha o menu ao clicar em um item do menu ou fora dele
+body.addEventListener('click', (event) => {
+    // Verifica se o clique foi fora do menu e do botão
+    if (menu.classList.contains('menu-aberto') && !menu.contains(event.target) && !btnMenu.contains(event.target)) {
+        menu.classList.remove('menu-aberto');
+        body.classList.remove('menu-aberto');
     }
-}
-
-function atualizarItemMenuLateral() {
-  const itemSelecionado = document.querySelector('.projetos-galeria-navegacao .item-projeto.ativo');
-  itemSelecionado.classList.remove('ativo');
-  menuLateralItens[projetoAtual].classList.add('ativo');
-}
-
-function mostrarOuEsconderSetas() {
-  const ehPrimeiroProjeto = projetoAtual === 0;
-  if (ehPrimeiroProjeto) {
-    btnVoltar.classList.add('esconder');
-  } else {
-    btnVoltar.classList.remove('esconder');
-  }
-
-  const ehUltimoProjeto = projetoAtual === projetos.length - 1;
-  if (ehUltimoProjeto) {
-    btnAvancar.classList.add('esconder');
-  } else {
-    btnAvancar.classList.remove('esconder');
-  }
-}
-
-btnAvancar.addEventListener('click', function () {
-  if (projetoAtual === projetos.length - 1) return;
-
-  esconderProjetoSelecionado();
-  projetoAtual++;
-  mostrarProjeto();
-  mostrarOuEsconderSetas();
-  atualizarItemMenuLateral();
 });
 
-btnVoltar.addEventListener('click', function () {
-  if (projetoAtual === 0) return;
+/* LÓGICA DA ANIMAÇÃO DA LINHA DO TEMPO */
+const itensDaLinhaDoTempo = document.querySelectorAll('.timeline-item');
 
-  esconderProjetoSelecionado();
-  projetoAtual--;
-  mostrarProjeto();
-  mostrarOuEsconderSetas();
-  atualizarItemMenuLateral();
-});
-
-menuLateralItens.forEach((item, indice) => {
-  item.addEventListener('click', () => {
-    if (projetoAtual === indice) return;
-
-    esconderProjetoSelecionado();
-    projetoAtual = indice;
-    mostrarProjeto();
-    mostrarOuEsconderSetas();
-    atualizarItemMenuLateral();
-  });
-});
-
-window.addEventListener('load', () => {
-  mudarCorDeFundo(projetos[projetoAtual]);
-});
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+const observadorLinhaDoTempo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            // Opcional: descomente a linha abaixo para re-animar toda vez que o usuário rolar para cima e para baixo
-            // entry.target.classList.remove('show');
+            observadorLinhaDoTempo.unobserve(entry.target); // Para de observar o elemento depois que ele já apareceu.
         }
     });
+}, {
+    threshold: 0.2 // A animação começa quando 20% do elemento estiver visível
 });
 
-const elementosParaAnimar = document.querySelectorAll('.habilidades .habilidade');
-elementosParaAnimar.forEach((element, index) => {
-    element.style.setProperty('--delay', `${index * 150}ms`);
-    observer.observe(element);
+itensDaLinhaDoTempo.forEach((item, index) => {
+    // Adiciona um pequeno atraso escalonado para um efeito mais suave
+    const delay = index * 150;
+    item.style.transitionDelay = `${delay}ms`;
+    
+    observadorLinhaDoTempo.observe(item);
+});
+/* LÓGICA DO DOSSIÊ INTERATIVO (EXPANDIR/RECOLHER) */
+const itensExpansiveis = document.querySelectorAll('.expandable .timeline-header');
+
+itensExpansiveis.forEach(item => {
+    item.addEventListener('click', () => {
+        const itemPai = item.closest('.expandable');
+
+        // Fecha outros itens que possam estar abertos para manter a interface limpa
+        document.querySelectorAll('.expandable.expanded').forEach(itemAberto => {
+            if (itemAberto !== itemPai) {
+                itemAberto.classList.remove('expanded');
+            }
+        });
+
+        // Abre ou fecha o item clicado
+        itemPai.classList.toggle('expanded');
+    });
 });
