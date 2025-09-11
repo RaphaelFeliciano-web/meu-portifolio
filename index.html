@@ -21,17 +21,16 @@
 
 <body id="body">
 
-  <button class="btn-menu-hamburguer">
-    <i class="fas fa-bars"></i>
+  <button class="btn-menu-hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-navegacao">
+    <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
   <header class="cabecalho">
-    <a href="#home">
-      <h1 class="logo">RF</h1>
-    </a>
+    
+     <a href="#home" class="logo "><img src="./src/imagens/logoRF.png" alt="Logo do portfólio do Raphael" ></a>
 
     <nav class="menu">
-      <ul>
+      <ul id="menu-navegacao">
         <li>
           <a href="#home">Início</a>
         </li>
@@ -40,6 +39,16 @@
         </li>
         <li>
           <a href="#projetos">Meus projetos</a>
+        </li>
+        <li class="has-submenu">
+          <a href="#oportunidades" class="submenu-trigger">Em Busca de Oportunidades <i class="fas fa-chevron-down submenu-arrow"></i></a>
+          <ul class="submenu">
+            <li><a href="./src/seu-curriculo.pdf" target="_blank">Meu Currículo</a></li>
+            <li><a href="https://www.linkedin.com/in/raphael-gustavo-898368165" target="_blank">Meu LinkedIn</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contato">Contato</a>
         </li>
       </ul>
     </nav>
@@ -62,7 +71,7 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/RaaphaGuu" title="Ir para o GitHub" target="_blank">
+            <a href="https://github.com/RaphaelFeliciano-web" title="Ir para o GitHub" target="_blank">
               <i class="fab fa-github"></i>
             </a>
           </li>
@@ -83,27 +92,93 @@
     <section class="timeline">
       <h2 class="titulo-secao"><span>Minha Jornada</span></h2>
       <!-- HABILIDADES -->
-      <div id="habilidades" class="timeline-item left">
-        <div class="timeline-content card-habilidade">
-          <i class="devicon-html5-plain-wordmark"></i>
-          <h3>HTML5</h3>
-          <p>Linguagem de marcação para estruturar o conteúdo de páginas web.</p>
+      <div id="habilidades" class="timeline-item left card-habilidade expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <i class="devicon-html5-plain-wordmark"></i>
+            <h3>HTML5</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Linguagem de marcação para estruturar o conteúdo de páginas web, criando a base e o esqueleto de sites e aplicações.</p>
+            <div class="skill-level">
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="--progress-level: 95%;">95%</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="timeline-item right">
-        <div class="timeline-content card-habilidade">
-          <i class="devicon-css3-plain-wordmark"></i>
-          <h3>CSS3</h3>
-          <p>Linguagem de estilização para criar o design de páginas web.</p>
+      <div class="timeline-item right card-habilidade expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <i class="devicon-css3-plain-wordmark"></i>
+            <h3>CSS3</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Linguagem de estilização para criar o design visual de páginas web, incluindo layouts, cores e fontes.</p>
+            <div class="skill-level">
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="--progress-level: 90%;">90%</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="timeline-item left">
-        <div class="timeline-content card-habilidade">
-          <i class="devicon-javascript-plain"></i>
-          <h3>JavaScript</h3>
-          <p>Linguagem de programação para criar interatividade em páginas web.</p>
+      <div class="timeline-item left card-habilidade expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <i class="devicon-javascript-plain"></i>
+            <h3>JavaScript</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Linguagem de programação para criar interatividade, animações e lógica complexa em páginas web.</p>
+            <div class="skill-level">
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="--progress-level: 90%;">90%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right card-habilidade expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <i class="devicon-react-original-wordmark"></i>
+            <h3>React</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Framework para criar interfaces de usuário componentizadas e reativas, como demonstrado em projetos NLW da Rocketseat.</p>
+            <div class="skill-level">
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="--progress-level: 75%;">75%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left card-habilidade expandable">
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <i class="devicon-nodejs-plain-wordmark"></i>
+            <h3>Node.js</h3>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <div class="timeline-details">
+            <p>Ambiente de execução para construir aplicações de backend, como APIs com autenticação JWT e integração com bancos de dados.</p>
+            <div class="skill-level">
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="--progress-level: 80%;">80%</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -194,7 +269,51 @@
         </div>
       </div>
     </section>
+
+    <section class="oportunidades" id="oportunidades">
+      <h2 class="titulo-secao"><span>Em Busca de Oportunidades</span></h2>
+      <div class="oportunidades-container">
+        <p>
+          Com cada linha de código, construí a minha jornada como desenvolvedor web. Hoje, busco uma oportunidade em uma empresa que me motive a ir além, permitindo-me extrair e evoluir 100% do meu potencial. Estou pronto para colaborar em projetos que realmente importem e façam a diferença, unindo minha paixão e minhas habilidades para alcançar resultados extraordinários.
+        </p>
+        <a href="#contato" class="btn-conversar">Vamos Conversar?</a>
+      </div>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2 class="titulo-secao"><span>Entre em Contato</span></h2>
+      <p class="contato-subtitulo">Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me contatar através dos canais abaixo.</p>
+      
+      <div class="contato-opcoes">
+        <a href="https://www.linkedin.com/in/raphael-gustavo-898368165" target="_blank" class="contato-card" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+            <span class="contato-card-titulo">LinkedIn</span>
+        </a>
+        <a href="mailto:raphael.gustavo.feliciano@gmail.com" class="contato-card" title="E-mail">
+            <i class="fas fa-envelope"></i>
+            <span class="contato-card-titulo">E-mail</span>
+        </a>
+        <a href="https://wa.me/5519989072931" target="_blank" class="contato-card" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="contato-card-titulo">WhatsApp</span>
+        </a>
+        <a href="#" target="_blank" class="contato-card" title="Discord">
+            <i class="fab fa-discord"></i>
+            <span class="contato-card-titulo">Discord</span>
+        </a>
+      </div>
+
+      <div class="contato-agradecimento">
+        <p>Obrigado pelo seu interesse!</p>
+      </div>
+    </section>
   </main>
+
+  <footer class="rodape">
+    <p>© 2024 Raphael Feliciano. Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="#home" class="btn-voltar-topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
 
   <script src="./src/js/index.js"></script>
 </body>

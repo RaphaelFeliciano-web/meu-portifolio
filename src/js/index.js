@@ -6,15 +6,42 @@ const body = document.querySelector('body');
 btnMenu.addEventListener('click', () => {
     menu.classList.toggle('menu-aberto');
     body.classList.toggle('menu-aberto');
+
+    const menuAberto = menu.classList.contains('menu-aberto');
+    btnMenu.setAttribute('aria-expanded', menuAberto);
+    btnMenu.setAttribute('aria-label', menuAberto ? 'Fechar menu' : 'Abrir menu');
 });
 
 // Fecha o menu ao clicar em um item do menu ou fora dele
-body.addEventListener('click', (event) => {
-    // Verifica se o clique foi fora do menu e do botão
-    if (menu.classList.contains('menu-aberto') && !menu.contains(event.target) && !btnMenu.contains(event.target)) {
-        menu.classList.remove('menu-aberto');
-        body.classList.remove('menu-aberto');
-    }
+document.addEventListener("click", (event) => {
+	const target = event.target;
+	const isClickOnMenuButton = btnMenu.contains(target);
+	const isClickInsideMenu = menu.contains(target);
+	const submenuTrigger = target.closest(".submenu-trigger");
+	const openSubmenu = document.querySelector(".has-submenu.submenu-aberto");
+
+	// 1. Lógica para abrir/fechar o submenu ao clicar no gatilho
+	if (submenuTrigger) {
+		submenuTrigger.closest(".has-submenu").classList.toggle("submenu-aberto");
+		return; // Interrompe a execução para não fechar o menu imediatamente
+	}
+
+	// 2. Lógica para fechar o submenu se ele estiver aberto e o clique for fora dele
+	if (openSubmenu && !openSubmenu.contains(target)) {
+		openSubmenu.classList.remove("submenu-aberto");
+	}
+
+	// 3. Lógica para fechar o menu mobile
+	const isMenuOpen = menu.classList.contains("menu-aberto");
+	if (isMenuOpen) {
+		// Fecha se o clique for fora do menu e do botão que o abre
+		if (!isClickInsideMenu && !isClickOnMenuButton) {
+			btnMenu.click();
+		} else if (target.tagName === 'A' && !target.classList.contains('submenu-trigger')) {
+			// Fecha se clicar em qualquer link que não seja o gatilho do submenu
+			btnMenu.click();
+		}
+	}
 });
 
 /* LÓGICA DA ANIMAÇÃO DA LINHA DO TEMPO */
@@ -38,6 +65,7 @@ itensDaLinhaDoTempo.forEach((item, index) => {
     
     observadorLinhaDoTempo.observe(item);
 });
+
 /* LÓGICA DO DOSSIÊ INTERATIVO (EXPANDIR/RECOLHER) */
 const itensExpansiveis = document.querySelectorAll('.expandable .timeline-header');
 
@@ -55,4 +83,16 @@ itensExpansiveis.forEach(item => {
         // Abre ou fecha o item clicado
         itemPai.classList.toggle('expanded');
     });
+});
+
+/* LÓGICA DO BOTÃO VOLTAR AO TOPO */
+const btnVoltarTopo = document.querySelector('.btn-voltar-topo');
+
+window.addEventListener('scroll', () => {
+    // Mostra o botão após rolar uma certa altura (ex: 400px)
+    if (window.scrollY > 400) {
+        btnVoltarTopo.classList.add('visivel');
+    } else {
+        btnVoltarTopo.classList.remove('visivel');
+    }
 });

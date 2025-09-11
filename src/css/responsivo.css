@@ -60,7 +60,11 @@
 	}
 
 	.timeline-item.left::after, .timeline-item.right::after {
-		left: 20px;
+		left: 35px;
+	}
+
+	.oportunidades .oportunidades-container {
+		padding: 30px;
 	}
 }
 
@@ -79,5 +83,35 @@
 
 	.conteudo-principal {
 		padding: 0 20px;
+	}
+
+	/* Garante que o conteúdo dos cards de projeto não seja cortado em telas pequenas */
+	.expandable.expanded .timeline-details {
+		max-height: 500px; /* Aumenta a altura máxima para a expansão */
+	}
+
+	.oportunidades .oportunidades-container {
+		padding: 30px 20px;
+	}
+
+	.oportunidades p {
+		font-size: 16px;
+		text-align: left;
+	}
+
+	.contato .contato-opcoes {
+		gap: 20px;
+	}
+
+	.contato .contato-card {
+		width: 140px;
+		height: 140px;
+	}
+
+	.btn-voltar-topo {
+		bottom: 20px;
+		right: 20px;
+		width: 45px;
+		height: 45px;
 	}
 }
