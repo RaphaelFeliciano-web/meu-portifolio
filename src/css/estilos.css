@@ -55,6 +55,11 @@ body {
 	z-index: 2;
 	box-shadow: 3px 0px 10px -5px rgba(0, 0, 0, 0.05);
 	overflow-y: auto;
+	transition: transform 0.8s ease-in-out;
+}
+
+.cabecalho.menu-oculto {
+	transform: translateX(-100%);
 }
 
 /* Estilização da barra de rolagem do menu */
@@ -186,6 +191,11 @@ body {
 .conteudo-principal {
 	margin-left: var(--largura-cabecalho);
 	padding: 0 60px; /* Adiciona um respiro nas laterais */
+	transition: margin-left 0.8s ease-in-out;
+}
+
+.cabecalho.menu-oculto ~ .conteudo-principal {
+	margin-left: 0;
 }
 
 /* SEÇÃO HOME */

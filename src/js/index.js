@@ -86,13 +86,26 @@ itensExpansiveis.forEach(item => {
 });
 
 /* LÓGICA DO BOTÃO VOLTAR AO TOPO */
+let lastScrollY = window.scrollY;
 const btnVoltarTopo = document.querySelector('.btn-voltar-topo');
 
 window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
     // Mostra o botão após rolar uma certa altura (ex: 400px)
-    if (window.scrollY > 400) {
+    if (currentScrollY > 400) {
         btnVoltarTopo.classList.add('visivel');
     } else {
         btnVoltarTopo.classList.remove('visivel');
     }
+
+    // Lógica para ocultar/mostrar menu no scroll (apenas em desktop)
+    if (window.innerWidth > 1024) {
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
+            menu.classList.add('menu-oculto');
+        } else {
+            menu.classList.remove('menu-oculto');
+        }
+    }
+    lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
 });
