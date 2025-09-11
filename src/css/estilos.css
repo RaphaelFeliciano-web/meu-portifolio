@@ -255,7 +255,7 @@ body {
 
 .titulo-secao span {
 	font-family: var(--fonte-destaque);
-	font-size: 2.25rem; /* 36px */
+	/* font-size: 2.25rem; 36px */
 	color: var(--cor-preta);
 	background-color: var(--cor-fundo);
 	padding: 35px 30px; /* Espaçamento lateral para criar a interrupção na linha */
